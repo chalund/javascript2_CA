@@ -1,0 +1,12 @@
+{
+  "name": "javascript2_ca",
+  "version": "1.0.0",
+  "description": "School project - Social media application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Charlotte Lund",
+  "license": "ISC"
+}
