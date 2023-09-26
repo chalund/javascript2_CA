@@ -11,3 +11,4 @@ if (path === '/login/login/index.html') {
 } else if (path === '/login/register/index.html') {
     registerFormListener()
 }
+
