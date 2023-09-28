@@ -1,17 +1,7 @@
 import { registerFormListener } from "./handlers/register.mjs";
 import { loginFormListener } from "./handlers/login.mjs";
 
-import * as posts from "./posts/index.mjs";
-
-import { createPost } from "./posts/create.mjs";
-import { updatePost } from "./posts/index.mjs";
-import { removePost } from "./posts/index.mjs";
-import { getPosts } from "./posts/index.mjs";
-import { getPost } from "./posts/index.mjs";
-
-
-
-
+// login and register form, choose one
 const path = location.pathname;
 
 if (path === '/login/login/index.html') {
@@ -20,23 +10,19 @@ if (path === '/login/login/index.html') {
     registerFormListener()
 }
 
+// fetch post
+import * as postMethods from "./posts/index.mjs";
+
+import * as templates from "./templates/index.mjs"
+
+export async function getPostTemplate() {
+    const posts = await postMethods.getPosts()
+    const container = document.querySelector("#post")
+    templates.renderPostTemplates(posts,container)
+}
+getPostTemplate()
 
 
-
-// createPost({
-//     title: "this new post",
-//     body: "body is new post"
-// })
-
-// updatePost({
-//     id: 1789,
-//     title: "UPDATE this new post",
-//     body: "body is UPDATED new post"
-// })
-
-// removePost(1788);
-
-
-// getPosts()
-// getPost(1664)
-
+// follow/unfollow btn
+import { toggleFollowButton } from "./profile.mjs";
+toggleFollowButton("follow-btn")
