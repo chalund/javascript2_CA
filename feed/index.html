@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="/dist/css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script src="/js/posts/create.mjs" type="module"></script>
+    <script src="/js/index.mjs" type="module"></script>
+    <script src="/js/feed.mjs" type="module"></script>
 </head>
 <body>
 <!-- work on nav-->
@@ -42,7 +43,7 @@
                     <img src="/images/logo.png" alt="profile image" width="100" height="100" class="rounded-circle border mx-auto m-4">
                     <div class="card-title">
                         <h5>Username</h5>
-                        <button class="btn btn-success mt-3">Follow</button>
+                        <button class="btn btn-success mt-3" id="follow-btn">Follow</button>
                     </div>
                 </div>
             </div>
@@ -52,65 +53,45 @@
                     <img src="/images/logo.png" alt="Logo" width="80" height="80">
                     <h1 class="ms-2">iKnitt</h1>
                 </div>
-                <div class="card mt-5" id="add-new-post">
+                <div class="card mt-5" id="search">
                     <div class="card-body">
-                        <div class="form-group">
-                            <textarea class="form-control" rows="3" placeholder="What are you thinking?" id="add-new-post-text" rows="3"></textarea>
-                        </div>
-                        <div class="d-flex justify-content-end p-3">
-                              <button class="btn btn-primary">add image</button>
-                              <button class="btn btn-primary ms-2" type="submit">Share</button>
-                        </div>
+                        <form class="form-search mx-5 d-flex justify-content-center align-items-center">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0 ms-2" type="submit">Search</button>
+                        </form>
                     </div>
-                </div> 
-                <div class="card mt-3 text-center">
+                </div>
+                <div class="card my-3 text-center">
                     <h1>New Feeds</h1>
                 </div>
-                <div class="card mt-3 p-3">
-                    <div class="d-flex justify-content align-items-center mt-4 ms-4"> 
-                        <img src="/images/logo.png" alt="Logo" width="60" height="60">
-                        <h5 class="ms-2">username</h5>
-                    </div>
-                    <div class="card-body">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi tenetur maiores, saepe, iusto doloremque culpa autem architecto fugiat ex earum suscipit! Harum, tenetur. Ipsam tenetur deleniti consequuntur quia minima quidem!</p>
-                    </div>
-                    <div class="d-flex justify-content-end px-3">
-                        <button class="btn btn-success ">Comment</button>
-                        <button class="btn btn-success ms-2">Like</button>
-                    </div>
-                </div>
-                <!-- <div class="card mt-3">
-                    <div class="d-flex justify-content align-items-center mt-4 ms-4"> 
-                        <img src="/images/logo.png" alt="Logo" width="60" height="60">
-                        <h5 class="ms-2">username</h5>
-                    </div>
-                    <div class="card-body">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi tenetur maiores, saepe, iusto doloremque culpa autem architecto fugiat ex earum suscipit! Harum, tenetur. Ipsam tenetur deleniti consequuntur quia minima quidem!</p>
-                    </div>
-                    <div class="d-flex justify-content-end px-3">
-                        <button class="btn btn-success ">Comment</button>
-                        <button class="btn btn-success ms-2">Like</button>
-                    </div>
-                </div> -->
-                
 
+                <!-- post thumbnails-->                
+                <div class="card-body"id="post" ></div>
+                
+              
+                <!--example on layout -->
                   <div class="card my-3">
                     <div class="card-body">
                         <div class="d-flex justify-content align-items-center mt-4 ms-4"> 
                             <img src="/images/logo.png" alt="Logo" width="60" height="60" class="card-image">
-                            <h5 class="card-title ms-2">username</h5>
+                            <h5 class="card-title ms-2" id="feed-username">username</h5>
                         </div>
-                        <p class="card-text pt-2 mx-3">With supporting text below as a natural lead-in to additional content.</p>
+                        <div class="pt-4 mx-4" id="feed-post">
+                            <h5 class="card-title" id="title">title</h5>
+                            <p class="card-text" id="body">With supporting text below as a natural lead-in to additional content.</p>
+                            <p class="card-text" id="tags">tags.</p>
+                            <p class="card-text" id="media">img.</p>
+                        
+                        </div>
                         <div class="d-flex justify-content-end px-3">
-                            <button class="btn btn-success ">Comment</button>
-                            <button class="btn btn-success ms-2">Like</button>
+                            <button class="btn btn-success" id="commeent-btn">Comment</button>
+                            <button class="btn btn-success ms-2" id="like-btn">Like</button>
                         </div>
                     </div>
                   </div>
+                <!-- delete this post above-->
 
             </div>
-
-
         </div>
     </div>
 </body>
