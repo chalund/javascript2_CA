@@ -17,18 +17,32 @@ export async function login(profile) {
         });
         console.log(response);
 
+
+        if (response.ok) {
+            const { accessToken, ...user } = await response.json();
+
+            storage.save("accessToken", accessToken);
+            storage.save("profile", user);
+
+            alert("You are now logged in"); // Display the alert upon successful login
+
+            // Redirect or perform any other actions as needed
+            window.location.replace("/profile/index.html");
+        } else {
+            alert("Login failed. Please check your username and password."); // Display an error message if login fails
+        }
         // const json = await response.json();
         // console.log(json);
 
         // const accessToken = json.accessToken;
         // localStorage.setItem('accessToken', accessToken);
-        const { accessToken, ...user } = await response.json()
+        // const { accessToken, ...user } = await response.json()
 
-        storage.save("accessToken", accessToken);
+        // storage.save("accessToken", accessToken);
 
-        storage.save("profile", user);
+        // storage.save("profile", user);
 
-        alert("You are now logged in")
+        // alert("You are now logged in")
         
 
     } catch(error) {

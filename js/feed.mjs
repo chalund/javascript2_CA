@@ -1,3 +1,18 @@
+// fetch post
+import * as postMethods from "./posts/index.mjs";
+import * as templates from "./templates/index.mjs"
+
+export async function getPostTemplate() {
+    const posts = await postMethods.getPosts()
+    const container = document.querySelector("#post")
+    templates.renderPostTemplates(posts,container)
+}
+getPostTemplate()
+
+
+
+
+//follow/unfollow btn
 export function toggleFollowButton(buttonId) {
     const followButton = document.getElementById(buttonId);
 
@@ -20,6 +35,7 @@ export function toggleFollowButton(buttonId) {
         }
     });
 }
+toggleFollowButton("follow-btn")
 
 
 
