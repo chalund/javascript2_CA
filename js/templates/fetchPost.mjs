@@ -1,14 +1,14 @@
 
-
 export function postTemplate(postData) {
     // Create a card element for the post
     const postCard = document.createElement("div");
     postCard.classList.add("card", "mb-3");
+  
 
     // Create a card body for the post content
     const cardBody = document.createElement("div");
     cardBody.classList.add("card-body");
-
+    
     // Create elements for various post content
     const titleElement = document.createElement("h2");
     titleElement.classList.add("card-title");
@@ -37,17 +37,18 @@ export function postTemplate(postData) {
         imageElement.style.margin = "0 auto";
 
         // Append the image to the card body
-        cardBody.appendChild(imageElement);
+        cardBody.append(imageElement);
     }
 
 
+
     // Append content elements to the card body
-    cardBody.appendChild(titleElement);
-    cardBody.appendChild(bodyElement);
-    cardBody.appendChild(tagsElement);
+    cardBody.append(titleElement);
+    cardBody.append(bodyElement);
+    cardBody.append(tagsElement);
 
     // Append the card body to the post card
-    postCard.appendChild(cardBody);
+    postCard.append(cardBody);
 
     return postCard;
 }

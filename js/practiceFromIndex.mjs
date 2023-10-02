@@ -1,3 +1,6 @@
+// just for practice remember to DELETE this form
+
+
 import { createPost } from "./posts/create.mjs";
 import { updatePost } from "./posts/index.mjs";
 import { removePost } from "./posts/index.mjs";
@@ -8,8 +11,8 @@ import * as postMethods from "./posts/index.mjs";
 
 
 createPost({
-    title: "this new post",
-    body: "body is new post"
+    title: "this is a new post",
+    body: "body for the post new post"
 })
 
 updatePost({

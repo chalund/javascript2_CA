@@ -7,6 +7,8 @@ export async function updatePost(postData) {
     const updatePostUrl = `${API_BASE_URL}/social/posts/${postData.id}`;
     const token = load("accessToken");
 
+   
+
     if (!postData.id) {
         throw new Error("Update requires a postID");
     }

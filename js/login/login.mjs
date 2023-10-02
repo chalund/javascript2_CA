@@ -27,7 +27,9 @@ export async function login(profile) {
             alert("You are now logged in"); // Display the alert upon successful login
 
             // Redirect or perform any other actions as needed
-            window.location.replace("/profile/index.html");
+
+            
+            // window.location.replace("/profile/index.html");
         } else {
             alert("Login failed. Please check your username and password."); // Display an error message if login fails
         }
