@@ -1,3 +1,5 @@
+// old fetchALLPOSTS copy it back
+
 
 export function postTemplate(postData) {
     // Create a card element for the post
@@ -61,7 +63,3 @@ export function renderPostTemplate(postData, parent) {
 export function renderPostTemplates(postDataList, parent) {
     parent.append(...postDataList.map(postTemplate))
 }
-
-
-
-

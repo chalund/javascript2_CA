@@ -9,11 +9,11 @@
 // }
 // getPostTemplate()
 
-import { getPosts } from "./posts/read.mjs";
-import { renderPostTemplates } from "./templates/fetchPost.mjs";  
+import { getPostsWithAuthor } from "./posts/get.mjs"; 
+import { renderPostTemplates } from "./templates/fetchAllPost.mjs";  
 
 export async function getPostTemplate() {
-    const posts = await getPosts()
+    const posts = await getPostsWithAuthor()
     const container = document.querySelector("#post")
     renderPostTemplates(posts,container)
 }
@@ -22,19 +22,11 @@ getPostTemplate()
 
 
 
-import { toggleFollowButton } from "./followBtn.mjs";
-toggleFollowButton("follow-btn")
+// import { toggleFollowButton } from "./followBtn.mjs";
+// toggleFollowButton("follow-btn")
 
-// import { getProfiles } from "./profiles/getProfile.mjs";
-// import { renderProfileCards } from "./templates/fetchProfile.mjs";
 
-// export async function getProfileCard() {
-//     const postProfile = await getProfiles();
-//     console.log(postProfile)
-//     const container = document.querySelector("#post")
-//     renderProfileCards(postProfile, container)
-// }
-// getProfileCard()
+
 
 
 // import { removePost } from "./posts/index.mjs";

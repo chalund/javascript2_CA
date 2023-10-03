@@ -2,7 +2,7 @@ import { API_BASE_URL } from "../constants.mjs";
 import { load } from "../storage/index.mjs";
 
 export async function getProfiles() {
-    const getProfileUrl = `${API_BASE_URL}/social/profiles/`;
+    const getProfileUrl = `${API_BASE_URL}/social/posts?_author=true`;
     const token = load("accessToken");
 
     try{
