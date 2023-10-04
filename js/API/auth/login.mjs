@@ -1,4 +1,5 @@
 import { callApi } from "../fetchApi.mjs";
+import * as storage from "../../storage/index.mjs"
 
 export async function login(profile) {
     const loginUrl = "/social/auth/login";
@@ -6,28 +7,28 @@ export async function login(profile) {
 
     try {
         const response = await callApi(loginUrl, method, profile);
-        console.log(response)
-        if (response.ok) {
-            // The login was successful
-            const { accessToken, ...user } = response;
-            
-            // Save the access token and user data
+        console.log(response);
+
+        if (response.ok) { // Check if the response status is in the success range
+            const { accessToken, ...user } = await response.json();
+
             storage.save("accessToken", accessToken);
             storage.save("profile", user);
 
-            // Display a success message to the user
-            alert("You are now logged in");
+            alert("You are now logged in"); // Display the alert upon successful login
 
-            // Redirect to the user's profile or main app page if needed
-            // Example: window.location.href = "/profile";
+            // Redirect to the feed page
+            window.location.href = "/feed/index.html";
+     
         } else {
-            // Handle the case where the login was unsuccessful
-            const errorResponse = await response.json();
-            console.error("Login failed:", errorResponse.message);
-            alert("Login failed. Please check your credentials.");
+            // Handle other error cases
+            alert("An unexpected error occurred. Please try again later.");
         }
+
     } catch (error) {
-        console.error("Login error", error);
-        alert( "An unexpected error occurred. Please try again later.")
+        console.log(error);
     }
 }
+
+
+
