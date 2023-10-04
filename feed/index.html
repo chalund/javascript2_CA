@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feed | iKnitt</title>
+    <title>Feed | GetSocial</title>
     <link rel="stylesheet" href="/dist/css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> -->
@@ -14,25 +14,25 @@
 </head>
 <body>
 <!-- work on nav-->
-    <nav class="navbar navbar-expand-lg bg-danger">
+    <nav class="navbar navbar-expand-lg bg-secondary">
         <div class="container">
             <a class="navbar-brand text-white" href="/feed/index.html">
                 <img src="/images/logo-white.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                iKnitt
+                GetSocial
               </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon text-white"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
+          </button> -->
+          <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
             <ul class="navbar-nav text-center">
               <li class="nav-item">
-                <a class="nav-link text-white" href="/profile/index.html">Profile</a>
+                <a class="nav-link text-white" href="/profile/">Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="/feed/index.html">Feed</a>
+                <a class="nav-link text-white active" href="/feed/index.html">Feed</a>
               </li>
             </ul>
-          </div>
+          <!-- </div> -->
         </div>
     </nav>
 <!--nav -->
@@ -40,8 +40,8 @@
         <div class="row p-5">
             <!--- profile-->
             <div class="col-md-4 col-lg-3">
-                <div class="card text-center border border-primary border-md">
-                    <img src="/images/logo.png" alt="profile image" width="100" height="100" class="rounded-circle border mx-auto m-4">
+                <div class="card text-center border border-black border-md">
+                    <img src="/images/logo-black.png" alt="profile image" width="100" height="100" class="rounded-circle border mx-auto m-4">
                     <div class="card-title">
                         <h5>Username</h5>
                         <button class="btn btn-success mt-3" id="follow-btn">Follow</button>
@@ -51,8 +51,8 @@
             <!---news feed-->
             <div class="col-md-8 col-lg-9 bg-warning pb-3">
                 <div class="d-flex justify-content-center align-items-center mt-4"> 
-                    <img src="/images/logo.png" alt="Logo" width="80" height="80">
-                    <h1 class="ms-2">iKnitt</h1>
+                    <img src="/images/logo-black.png" alt="Logo" width="80" height="80">
+                    <h1 class="ms-2">GetSocial</h1>
                 </div>
                 <div class="card mt-5" id="search">
                     <div class="card-body">
