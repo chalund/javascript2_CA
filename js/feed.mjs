@@ -4,7 +4,7 @@ console.log("feed mjs")
 import { callApi } from "./API/fetchApi.mjs";
 
 async function fetchPost() {
-    const endpoint = "/social/posts/?_author=true`t"; // Replace with your actual API endpoint
+    const endpoint = "/social/posts/?_author=true"; // Replace with your actual API endpoint
     const method = "GET";
 
     try {
@@ -19,11 +19,12 @@ async function fetchPost() {
 fetchPost()
 
 
-// import { renderPostTemplates } from "./templates/fetchAllPost.mjs";  
+import {postTemplate } from "./templates/fetchPost.mjs"; 
 
-// export async function getPostTemplate() {
-//     const posts = await fetchPost()
-//     const container = document.querySelector("#post")
-//     renderPostTemplates(posts,container)
-// }
-// getPostTemplate()
+export async function getPostTemplate() {
+    const posts = await fetchPost()
+    const container = document.querySelector("#post")
+    postTemplate(posts, container)
+   
+}
+getPostTemplate()
