@@ -1,6 +1,8 @@
 import { API_BASE_URL } from "./constants.mjs";
 import { load } from "../storage/index.mjs";
 
+console.log("fetchApi")
+
 /**
  * Makes a generic API call with the given endpoint and data.
  * @param {string} endpoint - The API endpoint.
@@ -33,6 +35,37 @@ export async function callApi(endpoint, method, data) {
         throw error;
     }
 }
+
+// export async function fetchPosts() {
+//     const endpoint = "/social/posts/?_author=true";
+//     const method = "GET";
+
+//     try {
+//         const response = await callApi(endpoint, method);
+//         console.log(response);
+//         // Use the response data here
+//     } catch (error) {
+//         console.error("API Error:", error);
+//     }
+// }
+
+// fetchPosts()
+
+export async function createPost(postData){
+    const endpoint = "/social/posts";
+    const method = "POST";
+  
+    try {
+        const response = await callApi(endpoint, method, postData) ;
+        console.log(response);
+        // Use the response data here
+    } catch (error) {
+        console.error("API Error:", error);
+    }
+}
+createPost()
+
+
 
 
 
