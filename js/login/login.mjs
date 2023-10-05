@@ -33,20 +33,7 @@ export async function login(profile) {
         } else {
             alert("Login failed. Please check your username and password."); // Display an error message if login fails
         }
-        // const json = await response.json();
-        // console.log(json);
-
-        // const accessToken = json.accessToken;
-        // localStorage.setItem('accessToken', accessToken);
-        // const { accessToken, ...user } = await response.json()
-
-        // storage.save("accessToken", accessToken);
-
-        // storage.save("profile", user);
-
-        // alert("You are now logged in")
         
-
     } catch(error) {
         console.log(error)
     }

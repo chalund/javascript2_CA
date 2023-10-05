@@ -3,7 +3,6 @@ import { login } from "../login/login.mjs";
 export function loginFormListener() {
     const form = document.querySelector('#loginForm');
 
-    if (form) {
         form.addEventListener("submit", async (event) => {
             event.preventDefault();
         
@@ -17,6 +16,5 @@ export function loginFormListener() {
             //send to API
             login(profile)
         });
-    }
 }
 

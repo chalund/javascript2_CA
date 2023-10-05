@@ -1,7 +1,7 @@
 export function postTemplate(postData) {
     // Create a card element for the post
     const postCard = document.createElement("div");
-    postCard.classList.add("card", "mb-3");
+    postCard.classList.add("card", "mt-3");
 
     // Create a card body for the post content
     const cardBody = document.createElement("div");
@@ -41,20 +41,20 @@ export function postTemplate(postData) {
     buttonsDiv.classList.add("d-flex", "justify-content-end", "px-3");
 
     // Create the like button
-    const likeButton = document.createElement("button");
-    likeButton.classList.add("btn", "btn-success");
-    likeButton.id = "like-btn";
-    likeButton.textContent = "Like";
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("btn", "btn-danger");
+    deleteButton.id = "delete-btn";
+    deleteButton.textContent = "Delete";
 
     // Create the comment button
-    const commentButton = document.createElement("button");
-    commentButton.classList.add("btn", "btn-success", "ms-2");
-    commentButton.id = "comment-btn";
-    commentButton.textContent = "Comment";
+    const editButton = document.createElement("button");
+    editButton.classList.add("btn", "btn-success", "mx-3");
+    editButton.id = "edit-btn";
+    editButton.textContent = "Edit";
 
     // Append the like and comment buttons to the buttonsDiv
-    buttonsDiv.append(commentButton);
-    buttonsDiv.append(likeButton);
+    buttonsDiv.append(editButton);
+    buttonsDiv.append(deleteButton);
 
     // Append all sections to the card body
     cardBody.append(postContentDiv);
