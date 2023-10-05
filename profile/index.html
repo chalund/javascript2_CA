@@ -60,7 +60,7 @@
                         <h3>Create a new post</h3>
                     </div>
                     <div class="mx-5" id="createPost">
-                        <form id="createPostForm">
+                        <form class="createPostForm">
                                 <div class="form-group">
                                     <label for="title">Title</label>
                                     <input class="form-control" id="title" type="text" name="title" placeholder="Title on your post" required>
@@ -68,16 +68,16 @@
         
                                 <div class="form-group">
                                     <label for="body">Body</label>
-                                    <textarea class="form-control" id="body" name="body" placeholder="What are you thinking?" rows="3" required></textarea>
+                                    <textarea class="form-control" name="body" placeholder="What are you thinking?" rows="3" required></textarea>
                                  
                                 </div>
                                 <div class="form-group">
                                     <label for="tags">Tags</label>
-                                    <input class="form-control" id="tags" type="text" name="tags" placeholder="#mittens #gray #raumayarn">
+                                    <input class="form-control" type="text" name="tags" placeholder="#yourTags #tags">
                                 </div>
                                 <div class="form-group">
                                     <label for="image">Image</label>
-                                    <input class="form-control" id="media" type="url" name="image" placeholder="Image of your project">
+                                    <input class="form-control" type="url" name="image" placeholder="Image of your project">
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success my-4">Create Post</button>
@@ -91,7 +91,7 @@
 
             
                     <!---profile posts-->
-                    <div id="profilePosts"></div>
+                    <div class="profilePosts"></div>
 
                     <!--example on layout -->
                     <div class="card my-3">

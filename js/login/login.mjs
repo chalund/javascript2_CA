@@ -3,7 +3,6 @@ import * as storage from "../storage/index.mjs"
 
 
 export async function login(profile) {
-    console.log(profile);
     const loginUrl = `${API_BASE_URL}/social/auth/login`;
     console.log(loginUrl)
 
@@ -38,3 +37,4 @@ export async function login(profile) {
         console.log(error)
     }
 }
+

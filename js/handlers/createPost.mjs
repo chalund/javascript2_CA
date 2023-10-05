@@ -1,4 +1,6 @@
-function createPostFormListener() {
+import { createPost } from "../posts/create.mjs";
+
+export function createPostFormListener() {
     const form = document.querySelector("#createPostForm");
     form.addEventListener("submit", async(event) =>{
         event.preventDefault();
@@ -8,6 +10,8 @@ function createPostFormListener() {
         const post = Object.fromEntries(formData.entries());
         console.log(post)
         console.log("createPost form works")
-    })
+
+        createPost(post)
+    });
 }
 createPostFormListener()
