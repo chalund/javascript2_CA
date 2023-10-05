@@ -14,4 +14,3 @@ export function createPostFormListener() {
         createPost(post)
     });
 }
-createPostFormListener()
