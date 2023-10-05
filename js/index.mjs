@@ -5,7 +5,7 @@ import { loginFormListener } from "./handlers/login.mjs";
 // login and register form, choose one
 const path = location.pathname;
 
-if (path === '/profile/login/index.html') {
+if (path === '/index.html') {
     loginFormListener()
 } else if (path === '/profile/register/index.html') {
     registerFormListener()
