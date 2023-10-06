@@ -13,19 +13,19 @@
 </head>
 <body>
 <!-- work on nav-->
-    <nav class="navbar navbar-expand-lg bg-secondary">
+ <nav class="navbar navbar-expand-lg bg-secondary">
         <div class="container">
-            <a class="navbar-brand" href="/feed/index.html">
+            <a class="navbar-brand text-white" href="/feed/index.html">
                 <img src="/images/logo-white.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
                 GetSocial
               </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon text-white"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
+          </button> 
+           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav text-center">
-              <li class="nav-item">
-                <a class="nav-link text-white" href="/profile/index.html">Profile</a>
+              <li class="nav-item active-nav">
+                <a class="nav-link text-white " href="/profile/index.html">Profile</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white" href="/feed/index.html">Feed</a>
@@ -35,6 +35,7 @@
         </div>
     </nav>
 <!--nav -->
+<main>
     <div class="container-fluid bg-light">
         <div class="row p-5">
             <!--- profile-->
@@ -64,25 +65,25 @@
                                     <label for="title">Title</label>
                                     <input class="form-control" id="title" type="text" name="title" placeholder="Title on your post" required>
                                 </div>
-        
                                 <div class="form-group">
                                     <label for="body">Body</label>
                                     <textarea class="form-control" id="body" name="body" placeholder="What are you thinking?" rows="3" required></textarea>
-                                 
                                 </div>
                                 <div class="form-group">
                                     <label for="tags">Tags</label>
                                     <input class="form-control" id="tags" type="text" name="tags" placeholder="#yourTags #tags">
                                 </div>
                                 <div class="form-group">
-                                    <label for="image">Image</label>
-                                    <input class="form-control" id="media" type="url" name="image" placeholder="https://www.pexels.com/example">
+                                    <label for="media">Image</label>
+                                    <input class="form-control" id="media" type="url" name="media" placeholder="https://www.pexels.com/example">
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success my-4">Create Post</button>
                                 </div>
                         </form> 
-                    </div>  
+                    </div>
+                    
+                    
                     <!-- my posts-->
                     <div class="card mt-3 text-center">
                         <h2>My posts</h2>
@@ -115,5 +116,6 @@
             </div>
         </div>
     </div>
+</main>
 </body>
 </html>

@@ -117,7 +117,10 @@ export function postTemplate(postData) {
     cardContainer.append(profileCard);
     cardContainer.append(postCard)
 
+
+
     container.append(cardContainer)
+
 
     return container;
 }

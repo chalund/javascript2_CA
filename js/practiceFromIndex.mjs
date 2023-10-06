@@ -11,8 +11,8 @@ import * as postMethods from "./posts/index.mjs";
 
 
 createPost({
-    title: "this is a new post",
-    body: "body for the post new post"
+    title: "ist fall",
+    body: "snow is arriving soon"
 })
 
 updatePost({

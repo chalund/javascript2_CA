@@ -23,6 +23,7 @@ export async function login(profile) {
             storage.save("accessToken", accessToken);
             storage.save("profile", user);
 
+    
             alert("You are now logged in"); // Display the alert upon successful login
 
             // Redirect or perform any other actions as needed

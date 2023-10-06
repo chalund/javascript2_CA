@@ -6,23 +6,29 @@ export async function createPost(postData) {
     const createPostUrl = `${API_BASE_URL}/social/posts`;
     const token = load("accessToken")
 
+
     try{
     const response = await fetch(createPostUrl, {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
-            "Authorization": `Bearer ${token}`,
+            'Authorization': `Bearer ${token}`,
             
         },
         body: JSON.stringify(postData),
-    })
+    });
+
+    console.log(token)
 
     const post = await response.json()
-    console.log(post)
+    
+    return post
 
-    return post;
+  
     
     }catch(error){
         console.log(error)
     }
 }
+
+
