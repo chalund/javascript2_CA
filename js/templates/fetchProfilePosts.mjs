@@ -70,18 +70,6 @@ export function postTemplate(postData) {
     editButton.textContent = "Edit";
     editButton.id = `editBtn${postData.id}`
 
-        // Add click event listeners for edit and delete buttons
-        editButton.addEventListener('click', () => {
-            // Handle edit action
-            console.log('Edit button clicked for post ID:', post.id);
-        });
-    
-        deleteButton.addEventListener('click', () => {
-            // Handle delete action
-            console.log('Delete button clicked for post ID:', post.id);
-        });
-
-
 
     // Append the like and comment buttons to the buttonsDiv
     buttonsDiv.append(editButton);
@@ -93,6 +81,12 @@ export function postTemplate(postData) {
 
     // Append the card body to the post card
     postCard.append(cardBody);
+
+    postCard.addEventListener("click", async () => {
+        const postId = postData.id;
+   
+        window.location.href = `/post/index.html?id=${postId}`; // Assuming you have a post details page (e.g., post.html)
+    });
 
     return postCard;
 }

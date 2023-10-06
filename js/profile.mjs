@@ -7,7 +7,7 @@ createPostFormListener()
 
 
 import { getPostsUser } from "./posts/get.mjs"; 
-import { renderPostTemplates } from "./templates/fetchProfilePosts.mjs"; 
+import { renderPostTemplates } from "./templates/fetchProfilePosts.mjs";
 
 export async function getPostTemplate() {
     const posts = await getPostsUser()
@@ -15,7 +15,6 @@ export async function getPostTemplate() {
     renderPostTemplates(posts, container)
 }
 getPostTemplate()
-
 
 
 

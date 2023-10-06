@@ -100,18 +100,6 @@ export async function getPostsUser() {
 //     }
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
 export async function getPost(id) {
     const getPostUrl = `${API_BASE_URL}/social/posts/${id}`;
     const token = load("accessToken");
@@ -138,3 +126,16 @@ export async function getPost(id) {
         console.log(error)
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
