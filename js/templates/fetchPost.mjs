@@ -34,22 +34,23 @@ export function postTemplate(postData) {
     tagsElement.textContent = postData.tags;
     postCard.append(tagsElement);
 
-         // Add a click event listener to the post card
+     // Add a click event listener to the post card
     postCard.addEventListener("click", async () => {
         const postId = postData.id;
    
         window.location.href = `/post/index.html?id=${postId}`; // Assuming you have a post details page (e.g., post.html)
     });
 
-
-
     return postCard;
 }
 
+//rendering a single post
 export function renderPostTemplate(postData, parent) {
+    // postData, information about post, parent, where you want to display it
     parent.append(postTemplate(postData))
 }
 
+//rendering several posts
 export function renderPostTemplates(postDataList, parent) {
     parent.append(...postDataList.map(postTemplate))
 }

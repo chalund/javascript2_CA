@@ -39,7 +39,7 @@ export async function getPostsWithAuthor() {
     })
 
     const post = await response.json()
-    console.log(post)
+    // console.log(post)
    
     return post;
   

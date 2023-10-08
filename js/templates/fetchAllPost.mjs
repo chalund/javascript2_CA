@@ -89,10 +89,7 @@ export function postTemplate(postData) {
     tagsElement.textContent = postData.tags;
     cardBody.append(tagsElement);
 
-
-
-
-        // Create a div to hold the like and comment buttons
+    // Create a div to hold the like and comment buttons
     const buttonsDiv = document.createElement("div");
     buttonsDiv.classList.add("d-flex", "justify-content-end", "px-3");
     postCard.append(buttonsDiv)
@@ -121,6 +118,11 @@ export function postTemplate(postData) {
 
     container.append(cardContainer)
 
+    container.addEventListener("click", async () => {
+        const postId = postData.id;
+   
+        window.location.href = `/post/index.html?id=${postId}`; // Assuming you have a post details page (e.g., post.html)
+    });
 
     return container;
 }
@@ -133,20 +135,3 @@ export function postTemplate(postData) {
     export function renderPostTemplates(postDataList, parent) {
         parent.append(...postDataList.map(postTemplate))
     }
-
-  
-
-
-
-
-   
-
-
-
-
-
-
-
-
-
-
