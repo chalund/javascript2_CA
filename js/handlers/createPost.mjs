@@ -26,6 +26,7 @@ export function createPostFormListener() {
             title: formData.get("title"),
             body: formData.get("body"),
             media: formData.get("media"),
+            //tags
          
              
         };
@@ -34,6 +35,7 @@ export function createPostFormListener() {
         console.log("createPost form works");
 
         createPost(post);
+        window.location.reload();
     });
 }
 

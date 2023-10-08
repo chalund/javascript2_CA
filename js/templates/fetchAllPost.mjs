@@ -8,7 +8,6 @@ export function postTemplate(postData) {
     cardContainer.classList.add("row");
 
     
-    
     const profileCard = document.createElement("div");
     profileCard.classList.add("profile-card", "col-sm-4");
 
@@ -44,18 +43,17 @@ export function postTemplate(postData) {
     userDiv.append(followButton)
 
     //Postcard
-
     const postCard = document.createElement("div");
     postCard.classList.add("post-card", "col-sm-8");
 
    
 
-        // Create a card body for the post content
+    // Create a card body for the post content
     const cardBody = document.createElement("div");
     cardBody.classList.add("card-body");
     postCard.append(cardBody)
 
-        // Check if an image is provided
+    // Check if an image is provided
     if (postData.media) {
         const imagePost = document.createElement("img");
         imagePost.classList.add("card-img-top");
@@ -121,7 +119,7 @@ export function postTemplate(postData) {
     container.addEventListener("click", async () => {
         const postId = postData.id;
    
-        window.location.href = `/post/index.html?id=${postId}`; // Assuming you have a post details page (e.g., post.html)
+        // window.location.href = `/post/index.html?id=${postId}`; // Assuming you have a post details page (e.g., post.html)
     });
 
     return container;

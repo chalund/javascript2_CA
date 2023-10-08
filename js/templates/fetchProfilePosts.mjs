@@ -1,3 +1,5 @@
+import { handleDeleteButtonClick } from "../handlers/buttons/deleteBtn.mjs";
+
 export function postTemplate(postData) {
     // Create a card element for the post
     const postCard = document.createElement("div");
@@ -25,8 +27,7 @@ export function postTemplate(postData) {
     postTags.classList.add("card-text");
     postTags.textContent = postData.tags;
 
-    const postMedia = document.createElement("img");
-            // Check if an image is provided
+
     if (postData.media) {
         const imagePost = document.createElement("img");
         imagePost.classList.add("card-img-top");
@@ -48,7 +49,7 @@ export function postTemplate(postData) {
     postContentDiv.append(postTitle);
     postContentDiv.append(postBody);
     postContentDiv.append(postTags);
-    postContentDiv.append(postMedia);
+
 
     // Create a div to hold the like and comment buttons
     const buttonsDiv = document.createElement("div");
@@ -57,32 +58,67 @@ export function postTemplate(postData) {
 
     // Create the like button
     const deleteButton = document.createElement("button");
-    deleteButton.classList.add("btn", "btn-danger");
-    deleteButton.id = "deleteBtn";
+    deleteButton.classList.add("btn", "btn-danger", "delete-btn");
     deleteButton.textContent = "Delete";
     deleteButton.id = `deleteBtn${postData.id}`;
+
+    
   
 
     // Create the comment button
     const editButton = document.createElement("button");
-    editButton.classList.add("btn", "btn-success", "mx-3");
-    editButton.id = "editBtn";
+    editButton.classList.add("btn", "btn-success", "mx-3", "edit-btn");
     editButton.textContent = "Edit";
     editButton.id = `editBtn${postData.id}`
 
-
+    
     // Append the like and comment buttons to the buttonsDiv
     buttonsDiv.append(editButton);
     buttonsDiv.append(deleteButton);
 
-    // Append all sections to the card body
-    cardBody.append(postContentDiv);
-    cardBody.append(buttonsDiv);
+  // Add a click event listener to the delete button
+  deleteButton.addEventListener("click", () => {
+    handleDeleteButtonClick(postData); // Call the function to handle delete
+  });
+
+  editButton.addEventListener("click", () => {
+    window.location.href = `/profile/edit/index.html?id=${postData.postId}`; 
+  });
+
+    // deleteButton.addEventListener("click", async () => {
+    //     // Show a confirmation modal using window.confirm
+    //     const confirmation = window.confirm("Are you sure you want to delete this post?");
+    //     if (confirmation) {
+    //       // If user confirms (clicks OK), proceed with deletion
+    //       try {
+    //         // Call the removePost function to delete the post
+    //         const postId = postData.id; // Assuming you want to delete the first post
+    //         const deletedPost = await removePost(postId);
+      
+    //         // Handle the response, e.g., remove the post element from the UI
+    //         if (deletedPost) {
+    //           // Assuming you have a function to remove the post element
+    //           removePostElement(postId);
+    //         }
+    //       } catch (error) {
+    //         console.error("Error deleting post:", error);
+    //       }
+    //     } else {
+    //       // If the user clicks Cancel, do nothing
+    //     }
+    //   });
+    
+
 
     // Append the card body to the post card
     postCard.append(cardBody);
 
-    postCard.addEventListener("click", async () => {
+        // Append all sections to the card body
+        postCard.append(postContentDiv);
+        postCard.append(postContentDiv);
+        postCard.append(buttonsDiv);
+
+    cardBody.addEventListener("click", async () => {
         const postId = postData.id;
    
         window.location.href = `/post/index.html?id=${postId}`; // Assuming you have a post details page (e.g., post.html)

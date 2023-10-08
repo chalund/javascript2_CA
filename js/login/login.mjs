@@ -29,7 +29,7 @@ export async function login(profile) {
             // Redirect or perform any other actions as needed
 
             
-            window.location.replace("/feed/index.html");
+            // window.location.replace("/feed/index.html");
         } else {
             alert("Login failed. Please check your username and password."); // Display an error message if login fails
         }
