@@ -28,10 +28,28 @@ getPostTemplate()
 
 
 //search function
+import { search } from "./search.mjs";
 
-// import { search } from "./search.mjs"
+const searchInput = document.querySelector("#searchInput");
+searchInput.addEventListener("input", (event) => {
+    event.preventDefault();
+    const value = event.target.value;
+    const result = search(value)
 
-// const searchResult = search('post')
-// console.log(searchResult)
+    
+    console.log({result})
 
+    const searchResult = document.querySelector("#searchResult");
+    searchResult.innerHTML = JSON.stringify(result)
+})
+
+    // //display data in the UI//display data in the userImage
+    // const searchBox = document.querySelector("#searchResult")
+    // searchBox.innerHTML = '';
+    // if(!result.length) {
+    //     searchBox.innerHTML = 'No record is found'
+    // }
+    // result.map(({title, body}, index) => {
+    //     searchBox.innerHTML = JSON.stringify({title,body })
+    // })
 

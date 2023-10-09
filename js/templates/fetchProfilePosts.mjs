@@ -1,4 +1,5 @@
 import { handleDeleteButtonClick } from "../handlers/buttons/deleteBtn.mjs";
+import { handleEditButtonClick } from "../handlers/buttons/editBtn.mjs";
 
 export function postTemplate(postData) {
     // Create a card element for the post
@@ -82,31 +83,9 @@ export function postTemplate(postData) {
   });
 
   editButton.addEventListener("click", () => {
-    window.location.href = `/profile/edit/index.html?id=${postData.postId}`; 
+    handleEditButtonClick(postData)
   });
 
-    // deleteButton.addEventListener("click", async () => {
-    //     // Show a confirmation modal using window.confirm
-    //     const confirmation = window.confirm("Are you sure you want to delete this post?");
-    //     if (confirmation) {
-    //       // If user confirms (clicks OK), proceed with deletion
-    //       try {
-    //         // Call the removePost function to delete the post
-    //         const postId = postData.id; // Assuming you want to delete the first post
-    //         const deletedPost = await removePost(postId);
-      
-    //         // Handle the response, e.g., remove the post element from the UI
-    //         if (deletedPost) {
-    //           // Assuming you have a function to remove the post element
-    //           removePostElement(postId);
-    //         }
-    //       } catch (error) {
-    //         console.error("Error deleting post:", error);
-    //       }
-    //     } else {
-    //       // If the user clicks Cancel, do nothing
-    //     }
-    //   });
     
 
 
