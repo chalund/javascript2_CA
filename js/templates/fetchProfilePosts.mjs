@@ -109,14 +109,11 @@ export function postTemplate(postData) {
 
 
 export function renderPostTemplate(postData, parent) {
-    const postElement = postTemplate(postData); // Create the post element
-    parent.append(postElement); // Append it to the parent
+    parent.append(postTemplate(postData))
 }
 
 export function renderPostTemplates(postDataList, parent) {
-    for (const postData of postDataList) {
-        renderPostTemplate(postData, parent); // Render each post
-    }
+    parent.append(...postDataList.map(postTemplate))
 }
 
 
