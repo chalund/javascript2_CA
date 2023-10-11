@@ -1,5 +1,5 @@
 import { registerFormListener } from "./handlers/register.mjs";
-import { loginFormListener } from "./handlers/login.mjs";
+import { loginFormListener } from "./handlers/form/login.mjs";
 
 
 // login and register form, choose one

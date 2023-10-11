@@ -1,10 +1,8 @@
 import { API_BASE_URL } from "../constants.mjs";
 import * as storage from "../storage/index.mjs"
 
-
 export async function login(profile) {
     const loginUrl = `${API_BASE_URL}/social/auth/login`;
-    console.log(loginUrl)
 
     try{
         const response = await fetch(loginUrl, {
@@ -14,8 +12,6 @@ export async function login(profile) {
             },
             body: JSON.stringify(profile),
         });
-        console.log(response);
-
 
         if (response.ok) {
             const { accessToken, ...user } = await response.json();
@@ -23,15 +19,11 @@ export async function login(profile) {
             storage.save("accessToken", accessToken);
             storage.save("profile", user);
 
-    
-            alert("You are now logged in"); // Display the alert upon successful login
+            alert("You are now logged in"); 
 
-            // Redirect or perform any other actions as needed
-
-            
-            // window.location.replace("/feed/index.html");
+            window.location.replace("/feed/index.html");
         } else {
-            alert("Login failed. Please check your username and password."); // Display an error message if login fails
+            alert("Login failed. Please check your username and password."); 
         }
         
     } catch(error) {
