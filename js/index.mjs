@@ -1,4 +1,4 @@
-import { registerFormListener } from "./handlers/register.mjs";
+import { registerFormListener } from "./handlers/form/register.mjs"; 
 import { loginFormListener } from "./handlers/form/login.mjs";
 
 

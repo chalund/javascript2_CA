@@ -1,4 +1,4 @@
-import { login } from "../../login/login.mjs"; 
+import { login } from "../../auth/login.mjs";
 
 export function loginFormListener() {
     const form = document.querySelector('#loginForm');

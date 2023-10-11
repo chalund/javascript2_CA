@@ -14,13 +14,19 @@ export async function register(profile) {
             },
             body: JSON.stringify(profile),
         });
-        console.log(response)
-        const json = await response.json();
-        console.log(json);
-        alert("Welcome, your are now registered");
-        return json
+
+        if (response.status === 200 || response.status === 201) {
+            const json = await response.json();
+            alert("Welcome, you are now registered");
+            window.location.replace("/index.html");
+            return json;
+        } else if (response.status === 400) {
+            alert("User already exists try a different username or email");
+        }
+   
 
     } catch(error) {
         console.log(error)
     } 
 }
+
