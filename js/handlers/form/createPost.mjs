@@ -1,4 +1,4 @@
-import { createPost } from "../posts/create.mjs";
+import { createPost } from "../../posts/create.mjs";
 
 export function createPostFormListener() {
     const form = document.querySelector("#createPostForm");
@@ -21,24 +21,13 @@ export function createPostFormListener() {
             media,
         }
 
-
-
-
-        // const form = event.target;
-        // const formData = new FormData(form);
-        // const post = {
-        //     title: formData.get("title"),
-        //     body: formData.get("body"),
-        //     media: formData.get("media"),
-        //     //tags
-         
-             
-        // };
-
-        console.log(post);
-        console.log("createPost form works");
-
-        createPost(post);
+        createPost(post)
+        .then(() => {
+            window.location.reload();
+        })
+        .catch(error => {
+            console.log("Error creating post:", error);
+        });
     });
 }
 

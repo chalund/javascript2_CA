@@ -1,4 +1,4 @@
-import { createPostFormListener } from "./handlers/createPost.mjs";
+import { createPostFormListener } from "./handlers/form/createPost.mjs"; 
 createPostFormListener()
 
 
@@ -30,19 +30,7 @@ export async function getPostTemplate() {
 getPostTemplate()
 
 
-function logout() {
-  const logoutBtn = document.querySelector("#logout");
 
-  logoutBtn.addEventListener("click" , () => {
-      console.log("click")
-
-      localStorage.clear()
-  
-      window.location.replace("/profile/logout/index.html")
-  })
-}
-
-logout()
 
 
 
