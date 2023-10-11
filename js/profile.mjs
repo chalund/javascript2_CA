@@ -1,6 +1,8 @@
 import { createPostFormListener } from "./handlers/form/createPost.mjs"; 
 createPostFormListener()
 
+import { logout } from "./handlers/logout.mjs";
+logout()
 
 // import { removePost } from "./posts/delete.mjs";
 // removePost(2877)

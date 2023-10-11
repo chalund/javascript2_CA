@@ -1,5 +1,7 @@
 
 console.log("feed.mjs")
+import { logout } from "./handlers/logout.mjs";
+logout()
 
 import { getPostsWithAuthor } from "./posts/get.mjs"; 
 import { renderPostTemplates } from "./templates/fetchAllPost.mjs"; 

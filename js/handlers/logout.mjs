@@ -1,13 +1,14 @@
-function logout() {
+export function logout() {
     const logoutBtn = document.querySelector("#logout");
-  
-    logoutBtn.addEventListener("click" , () => {
-        console.log("click")
-  
-        localStorage.clear()
-    
-        window.location.replace("/profile/logout/index.html")
-    })
-  }
-  
-  logout()
+
+    logoutBtn.addEventListener("click", () => {
+        const confirmLogout = window.confirm("Are you sure you want to log out?");
+        
+        if (confirmLogout) {
+            localStorage.clear();
+            window.location.replace("/profile/logout/index.html");
+        } else {
+            console.log("Canceled logout");
+        }
+    });
+}
