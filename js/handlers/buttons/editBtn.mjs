@@ -5,14 +5,19 @@ export async function handleEditButtonClick(postData) {
     const confirmation = window.confirm("Are you sure you want to edit this post?");
     
     if (confirmation) {
-      try {
+      try { 
+        
+        const postId = postData.id;
+
         window.location.href = `/profile/edit/index.html?id=${postId}`;
         // Call the updatePost function to edit the post
-        const postId = postData.id;
+        console.log(post)
+       
         const editedPost = await updatePost(postData); // Assuming updatePost returns the edited post data
     
         // Handle the response or update the UI as needed
         if (editedPost) {
+          console.log("Edited Post:", editedPost);
           // Assuming you have a function to update the post element in the UI
           updatePostInUI(editedPost);
         }

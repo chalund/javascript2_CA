@@ -74,32 +74,6 @@ export async function getPostsUser() {
     }
 }
 
-// export async function getPostsByUser(username) {
-//     const postUserUrl = `${API_BASE_URL}/social/profiles/${username}/posts`;
-//     const token = load("accessToken");
-
-//     try {
-//         const response = await fetch(postUserUrl, {
-//             headers: {
-//                 'Content-Type': 'application/json',
-//                 "Authorization": `Bearer ${token}`,
-//             },
-//         });
-
-//         if (!response.ok) {
-//             throw new Error('Failed to fetch user posts');
-//         }
-
-//         const posts = await response.json();
-//         console.log(posts);
-
-//         return posts;
-//     } catch (error) {
-//         console.error(error);
-//         throw error; // Re-throw the error for handling at a higher level
-//     }
-// }
-
 export async function getPost(id) {
     const getPostUrl = `${API_BASE_URL}/social/posts/${id}`;
     const token = load("accessToken");
@@ -126,6 +100,32 @@ export async function getPost(id) {
         console.log(error)
     }
 }
+
+
+export async function getPostWithImages() {
+    const postUserUrl = `${API_BASE_URL}/social/posts?_media=true`;
+    const token = load("accessToken");
+
+    try{
+    const response = await fetch(postUserUrl, {
+        headers: {
+            'Content-Type': 'application/json',
+            "Authorization": `Bearer ${token}`,  
+        },
+    })
+
+    const post = await response.json()
+    console.log(post)
+   
+    return post;
+  
+    
+    }catch(error){
+        console.log(error)
+    }
+}
+
+
 
 
 

@@ -1,5 +1,6 @@
 console.log("update form");
 
+
 import { updatePost } from "../posts/update.mjs";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -10,19 +11,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
+        console.log(event.target)
+        const formElements = event.target;
+        console.log({formElements})
 
-        const form = event.target;
-        const formData = new FormData(form);
+        const title = document.getElementById('title').value;
+        const body = document.getElementById('body').value;
+        const tags = document.getElementById('tags').value;
+        const media = document.getElementById('media').value;
+
+        console.log({title});
         const post = {
-            title: formData.get("title"),
-            body: formData.get("body"),
-            media: formData.get("media"),
-            tags: formData.get("tags")   
-        };
+            title,
+            body,
+            tags: [tags],
+            media,
+        }
+
         post.id = id;
      
         console.log(post);
         console.log("updateForm works");
         updatePost(post)
+
     });
 });
+
+
+

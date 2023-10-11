@@ -1,7 +1,7 @@
 
 console.log("feed.mjs")
 
-import { getPostsWithAuthor } from "./posts/get.mjs"; 
+import { getPost, getPostsWithAuthor } from "./posts/get.mjs"; 
 import { renderPostTemplates } from "./templates/fetchAllPost.mjs"; 
 
 
@@ -14,11 +14,15 @@ export async function getPostTemplate() {
 getPostTemplate()
 
 
+import * as postFilters from "./filterPost.mjs"
+
 
 
 
 // import { removePost } from "./posts/index.mjs";
 // removePost(2130)
+
+import { fetchAndFilterPosts, filterLikedPosts, filterPostsWithImages, filterUpdatedPosts, showAllPosts } from "./filterPost.mjs"; 
 
 
 
@@ -43,13 +47,4 @@ searchInput.addEventListener("input", (event) => {
     searchResult.innerHTML = JSON.stringify(result)
 })
 
-    // //display data in the UI//display data in the userImage
-    // const searchBox = document.querySelector("#searchResult")
-    // searchBox.innerHTML = '';
-    // if(!result.length) {
-    //     searchBox.innerHTML = 'No record is found'
-    // }
-    // result.map(({title, body}, index) => {
-    //     searchBox.innerHTML = JSON.stringify({title,body })
-    // })
 

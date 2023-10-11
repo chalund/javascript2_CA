@@ -1,6 +1,7 @@
 import { handleDeleteButtonClick } from "../handlers/buttons/deleteBtn.mjs";
 import { handleEditButtonClick } from "../handlers/buttons/editBtn.mjs";
 
+
 export function postTemplate(postData) {
     // Create a card element for the post
     const postCard = document.createElement("div");
