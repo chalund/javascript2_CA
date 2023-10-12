@@ -25,16 +25,16 @@ export async function getPost(id) {
     console.log(postData)
 
 
-
     const postDetailsContainer = document.getElementById('post-details');
     postDetailsContainer.innerHTML = `
-        <div class="card">
+        <div class="card text-center">
             <h2>${postData.title}</h2>
-            ${postData.media ? `<img src="${postData.media}" alt="Post Image">` : ''}
+            ${postData.media ? `<img src="${postData.media}" alt="Post Image" style="max-width: 200px;">` : ''}
             <p>${postData.body}</p>
             <p>${postData.tags}</p>
         </div>
     `;
+
   
     
     }catch(error){

@@ -4,13 +4,13 @@
   min-height: 100vh;
   background-image: linear-gradient(rgba(85, 83, 83, 0.483), rgba(85, 83, 83, 0.483)), url(/images/chat.jpg);
   background-position: center;
-  background-size: cover;
+  background-repeat: repeat;
   position: relative;
 }
 
 .custom-navbar .nav-item {
   display: inline-block;
-  margin-right: 10px; /* Add some right margin for spacing */
+  margin-right: 10px;
 }
 
 .active-nav {

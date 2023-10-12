@@ -19,8 +19,6 @@ export async function login(profile) {
             storage.save("accessToken", accessToken);
             storage.save("profile", user);
 
-            alert("You are now logged in"); 
-
             window.location.replace("/feed/index.html");
         } else {
             alert("Login failed. Please check your username and password."); 
