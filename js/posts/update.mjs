@@ -4,10 +4,6 @@ import { load } from "../storage/index.mjs";
 export async function updatePost(postData) {
     const updatePostUrl = `${API_BASE_URL}/social/posts/${postData.id}`;
     const token = load("accessToken");
-
-    // if (!postData.id) {
-    //     throw new Error("Update requires a postID");
-    // }
     
     try{
     const response = await fetch(updatePostUrl, {
@@ -19,14 +15,16 @@ export async function updatePost(postData) {
         },
         body: JSON.stringify(postData),
     })
+        if (response.ok) {
+            const post = await response.json();
+            // console.log(post);
+            window.location.replace("/profile/index.html");
+            return post;
+        } else {
+            console.error("Failed to update the post.");
+            return null;
+        }
 
-    const post = await response.json()
-    console.log(post)
-
-
-
-    return post;
-    
     }catch(error){
         console.log(error)
     }

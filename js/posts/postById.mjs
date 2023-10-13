@@ -29,7 +29,7 @@ export async function getPost(id) {
     postDetailsContainer.innerHTML = `
         <div class="card text-center">
             <h2>${postData.title}</h2>
-            ${postData.media ? `<img src="${postData.media}" alt="Post Image" style="max-width: 200px;">` : ''}
+            ${postData.media ? `<img src="${postData.media}" alt="Post Image" style="max-width: 200px; margin: 0 auto; display: block;">` : ''}
             <p>${postData.body}</p>
             <p>${postData.tags}</p>
         </div>

@@ -5,6 +5,7 @@ import { renderPostTemplates } from "./templates/fetchAllPost.mjs";
 
     async function getPostTemplate() {
         const posts = await getPostsWithAuthor()
+        console.log(posts)
         const container = document.querySelector("#post")
         renderPostTemplates(posts, container)
     }

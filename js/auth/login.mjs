@@ -14,10 +14,11 @@ export async function login(profile) {
         });
 
         if (response.ok) {
-            const { accessToken, ...user } = await response.json();
+            const { accessToken, email, name } = await response.json();
 
             storage.save("accessToken", accessToken);
-            storage.save("profile", user);
+            storage.save("email", email);
+            storage.save("username", name);
 
             window.location.replace("/feed/index.html");
         } else {
