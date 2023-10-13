@@ -11,47 +11,75 @@
     <script src="/js/feed.mjs" type="module"></script>
 </head>
 <body>
-                <div class="card text-center border border-black border-md">
-                    <img src="/images/logo-black.png" alt="profile image" width="100" height="100" class="rounded-circle border mx-auto m-4">
-                    <div class="card-title">
-                        <h5>Username</h5>
-                        <button class="btn btn-success mt-3" id="follow-btn">Follow</button>
-                    </div>
-                </div>
-            </div>
-            <!---news feed-->
-            <div class="col-md-8 col-lg-9 bg-warning pb-3">
-                <div class="d-flex justify-content-center align-items-center mt-4"> 
-                    <img src="/images/logo-black.png" alt="Logo" width="80" height="80">
-                    <h1 class="ms-2">GetSocial</h1>
-                </div>
-                <section id="seach-bar">
-               
-                  <div class="mt-3 p-3">
-                  <form class="d-flex" role="search">
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Search.." aria-label="Search" aria-describedby="button-addon2" id="searchInput">
-                      <button class="btn btn-primary" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
-                    </div>
-                    <div class="dropdown">
-                      <button class="btn btn-primary dropdown-toggle ms-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-filter-left"></i>
-                      </button>
-                      <ul class="dropdown-menu border border-primary" aria-labelledby="filterDropdown">
-                        <li><a class="dropdown-item active-filter" href="#" data-filter="popular">Popular</a></li>
-                        <li><a class="dropdown-item active-filter" href="#" data-filter="postWithImages">Posts with images</a></li>
-                        <li><a class="dropdown-item active-filter" href="#" data-filter="updatedPosts">Updated posts</a></li>
-                        <li><a class="dropdown-item active-filter" href="#" data-filter="viewAll">All Posts</a></li>
-                    </ul>
-                    </div>
-                  </form>
-              </section>
-                <div class="card my-3 text-center">
-                    <h1>New Feeds</h1>
-                </div>
-                <div id="post"></div>
+  <nav class="navbar navbar-expand-lg bg-primary">
+    <div class="container">
+        <a class="navbar-brand text-white" href="/feed/index.html">
+            <img src="/images/logo-white.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            GetSocial
+          </a>
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon text-white"></span>
+      </button> 
+       <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav text-center">
+          <li class="nav-item active-nav">
+            <a class="nav-link text-white " href="/profile/index.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="/feed/index.html">Feed</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#" id="logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+<main>
+<div class="container-fluid bg-image">
+  <div class="row p-5">
+    <!--- profile-->
+    <div class="col-md-4 col-lg-3">
+        <div class="card text-center border border-black border-md">
+            <img src="/images/logo-black.png" alt="profile image" width="100" height="100" class="rounded-circle border mx-auto m-4">
+            <div class="card-title">
+                <h5>Username</h5>
+                <button class="btn btn-success mt-3" id="follow-btn">Follow</button>
             </div>
         </div>
+    </div>
+      <!---news feed-->
+    <div class="col-md-8 col-lg-9 bg-warning pb-3">
+      <div class="d-flex justify-content-center align-items-center mt-4"> 
+              <img src="/images/logo-black.png" alt="Logo" width="80" height="80">
+              <h1 class="ms-2">GetSocial</h1>
+           </div>
+          <section id="seach-bar">
+            <div class="mt-3 p-3">
+            <form class="d-flex" role="search">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search.." aria-label="Search" aria-describedby="button-addon2" id="searchInput">
+                <button class="btn btn-primary" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
+              </div>
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle ms-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-filter-left"></i>
+                 </button>
+                <ul class="dropdown-menu border border-primary" aria-labelledby="filterDropdown">
+                  <li><a class="dropdown-item active-filter" href="#" data-filter="popular">Popular</a></li>
+                  <li><a class="dropdown-item active-filter" href="#" data-filter="postWithImages">Posts with images</a></li>
+                  <li><a class="dropdown-item active-filter" href="#" data-filter="updatedPosts">Updated posts</a></li>
+                  <li><a class="dropdown-item active-filter" href="#" data-filter="viewAll">All Posts</a></li>
+              </ul>
+              </div>
+            </form>
+          </section>
+          <div class="card my-3 text-center">
+            <h1>New Feeds</h1>
+          </div>
+            <div id="post"></div>
+          </div>
+      </div>
     </div>
 </main>
 <footer class="footer mt-auto py-1">
