@@ -21,11 +21,9 @@ export async function removePost(id) {
     })
 
     const post = await response.json()
-    console.log(post)
-    console.log("post is deleted")
+    // console.log("post is deleted")
 
     return post;
-  
     
     }catch(error){
         console.log(error)

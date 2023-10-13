@@ -1,6 +1,5 @@
 import { API_BASE_URL } from "../constants.mjs";
 
-
 export async function register(profile) {
     console.log(profile);
     const registerUrl = `${API_BASE_URL}/social/auth/register`;
@@ -24,7 +23,6 @@ export async function register(profile) {
             alert("User already exists try a different username or email");
         }
    
-
     } catch(error) {
         console.log(error)
     } 

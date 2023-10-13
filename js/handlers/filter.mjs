@@ -2,7 +2,6 @@ import { getPostsWithAuthor } from "../posts/get.mjs";
 import { postTemplate } from "../templates/fetchAllPost.mjs";
 const filterPostContainer = document.querySelector("#post")
 
-
 export async function fetchAndFilterPosts() {
   try {
     const posts = await getPostsWithAuthor(); 

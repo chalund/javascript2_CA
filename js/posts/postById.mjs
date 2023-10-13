@@ -24,7 +24,6 @@ export async function getPost(id) {
     const postData = await response.json();
     console.log(postData)
 
-
     const postDetailsContainer = document.getElementById('post-details');
     postDetailsContainer.innerHTML = `
         <div class="card text-center">
@@ -32,14 +31,9 @@ export async function getPost(id) {
             ${postData.media ? `<img src="${postData.media}" alt="Post Image" style="max-width: 200px; margin: 0 auto; display: block;">` : ''}
             <p>${postData.body}</p>
             <p>${postData.tags}</p>
-        </div>
-    `;
+        </div>`;
 
-  
-    
     }catch(error){
         console.log(error)
     }
 }
-
-
