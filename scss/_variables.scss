@@ -1,0 +1,38 @@
+.bg-image {
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(85, 83, 83, 0.483), (rgba(85, 83, 83, 0.483))), url(/images/chat.jpg);
+    background-position: center;
+
+    background-repeat: repeat;
+    position: relative;
+}
+
+.custom-navbar .nav-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.navbar-toggler-icon {
+
+}
+
+ 
+.active-nav {
+    font-weight: bolder;
+    text-decoration: underline;
+    color: white;
+}
+
+.active-filter {
+    background-color: #490033;
+    color: white;
+}
+
+.active-filter:hover {
+    background-color: #490033;
+    color: white;
+}
+
+$warning: #F2D977;
+$primary: #490033;

@@ -1,13 +1,14 @@
-import { registerFormListener } from "./handlers/register.mjs";
-import { loginFormListener } from "./handlers/login.mjs";
+import { registerFormListener } from "./handlers/form/register.mjs"; 
+import { loginFormListener } from "./handlers/form/login.mjs";
 
 
-
-
+// login and register form, choose one
 const path = location.pathname;
 
-if (path === '/login/login/index.html') {
+if (path === '/index.html') {
     loginFormListener()
-} else if (path === '/login/register/index.html') {
+} else if (path === '/profile/register/index.html') {
     registerFormListener()
 }
+
+

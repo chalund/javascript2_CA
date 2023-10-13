@@ -4,44 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Register | GetSocial</title>
     <link rel="stylesheet" href="/dist/css/index.css">
-   <!-- <script src="/js/handlers/register.mjs" defer type="module"></script> -->
-    <script src="/js/index.mjs" type="module" defer></script>
+    <script src="/js/index.mjs" type="module"></script>
 </head>
 <body>
-    <body>
+    <main>
         <div class="container-fluid bg-image">
             <div class="row min-vh-100 d-flex justify-content-center align-items-center">
-                <div class="col-sm-8 col-md-6 col-lg-4 bg-light rounded p-3">
+                <div class="col-sm-12 col-md-6 col-lg-4 bg-light rounded p-3">
                     <div class="d-flex justify-content-center align-items-center p-4">
-                        <img src="/images/logo-black.png" alt="logo yarn & knitting needles" width="50" height="50" >
+                        <img src="/images/logo-black.png" alt="logo chat bubble" width="50" height="50" >
                         <h1 class="ms-2">GetSocial</h1>
                     </div>
-                    <div class="px-5">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam error, voluptatibus sint qui ratione doloribus earum ipsum laudantium, sed quia iure, laboriosam aliquam. Esse incidunt nihil reprehenderit dolores iste adipisci!</p>
+                    <div class="px-4">
+                        <p>"Join GetSocial – Where Fun and Connection Meet! Register Now in Just a Few Simple Steps and Join the Fun!"</p>
                     </div>
                     <div class="text-center pt-3">
                         <h2>Register</h2>
                     </div>
-                    <div class="">
+                    <div>
                         <form id="registerForm" class="mx-5">
                             <div class="form-group mb-3">
                                 <label for="name">Name</label>
                                 <input class="form-control" type="name" name="name" required pattern="^[\w]+$" title="User name must only contain letters, numbers and underscore (_). Example My_username123" maxlength="20">
                             </div>
-
                             <div class="form-group mb-3">
                                 <label for="email">Email</label>
                                 <input class="form-control" type="email" name="email" required pattern="^[\w\-.]+@(stud\.)?noroff\.no$" title="only @noroff/@stud.noroff users">
-                             
                             </div>
                             <div class="form-group mb-3">
                                 <label for="password">Password</label>
                                 <input class="form-control" type="password" name="password" required minLength="8" >
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-lg btn-success my-2">Register user</button>
                             </div>
                         </form> 
                         <div class="text-center mt-3">
@@ -50,11 +46,10 @@
                     </div>   
                 </div>
             </div>
-        
         </div>
-        <footer class="footer mt-auto py-1">
-            <p class="text-center"> &copy; Copyright 2023</p>
-        </footer>    
-    </body>
+    </main>
+    <footer class="footer mt-auto py-1">
+        <p class="text-center"> &copy; Copyright 2023</p>
+    </footer>    
 </body>
 </html>
