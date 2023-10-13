@@ -24,6 +24,5 @@ import { search } from "./handlers/search.mjs";
         searchResult.innerHTML = JSON.stringify(result)
     })
 
-
 fetchAndFilterPosts();
 logout()

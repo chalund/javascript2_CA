@@ -1,6 +1,3 @@
-console.log("update form");
-
-
 import { updatePost } from "../posts/update.mjs";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -36,6 +33,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 });
-
-
-

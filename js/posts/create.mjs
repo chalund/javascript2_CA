@@ -24,8 +24,6 @@ export async function createPost(postData) {
     
     return post
 
-  
-    
     }catch(error){
         console.log(error)
     }

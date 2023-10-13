@@ -4,9 +4,7 @@ export function createPostFormListener() {
     const form = document.querySelector("#createPostForm");
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
-        console.log(event.target)
         const formElements = event.target;
-        console.log({formElements})
 
         const title = document.getElementById('title').value;
         const body = document.getElementById('body').value;
