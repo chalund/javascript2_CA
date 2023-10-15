@@ -5,7 +5,6 @@ import { renderPostTemplates } from "./templates/fetchAllPost.mjs";
 
     async function getPostTemplate() {
         const posts = await getPostsWithAuthor()
-        console.log(posts)
         const container = document.querySelector("#post")
         renderPostTemplates(posts, container)
     }
@@ -19,7 +18,6 @@ import { search } from "./handlers/search.mjs";
         event.preventDefault();
         const value = event.target.value;
         const result = search(value)    
-        // console.log({result})
         const searchResult = document.querySelector("#post");
         searchResult.innerHTML = JSON.stringify(result)
     })

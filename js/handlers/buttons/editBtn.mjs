@@ -8,11 +8,10 @@ export async function handleEditButtonClick(postData) {
         const postId = postData.id;
 
         window.location.href = `/profile/edit/index.html?id=${postId}`;
-        // console.log(post)
+
         const editedPost = await updatePost(postData); 
 
         if (editedPost) {
-          // console.log("Edited Post:", editedPost);
           updatePostInUI(editedPost);
         }
     

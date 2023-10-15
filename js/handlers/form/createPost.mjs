@@ -19,14 +19,11 @@ export function createPostFormListener() {
             media,
         }
 
-        createPost(post)
-        .then(() => {
+        try {
+            await createPost(post);
             window.location.reload();
-        })
-        .catch(error => {
+        } catch (error) {
             console.log("Error creating post:", error);
-        });
+        }
     });
 }
-
-

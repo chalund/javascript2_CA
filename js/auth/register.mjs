@@ -1,9 +1,7 @@
 import { API_BASE_URL } from "../constants.mjs";
 
 export async function register(profile) {
-    console.log(profile);
     const registerUrl = `${API_BASE_URL}/social/auth/register`;
-    console.log(registerUrl)
 
     try{
         const response = await fetch(registerUrl, {
@@ -21,10 +19,30 @@ export async function register(profile) {
             return json;
         } else if (response.status === 400) {
             alert("User already exists try a different username or email");
+
+            clearRegistrationForm()
+
+            window.location.replace("/profile/register/index.html");
         }
-   
     } catch(error) {
         console.log(error)
     } 
 }
 
+function clearRegistrationForm() {
+    const usernameInput = document.getElementById("username");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+
+    if (usernameInput) {
+        usernameInput.value = "";
+    }
+
+    if (emailInput) {
+        emailInput.value = "";
+    }
+
+    if (passwordInput) {
+        passwordInput.value = "";
+    }
+}

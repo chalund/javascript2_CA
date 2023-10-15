@@ -22,13 +22,12 @@ export async function getPost(id) {
     })
 
     const postData = await response.json();
-    console.log(postData)
 
     const postDetailsContainer = document.getElementById('post-details');
     postDetailsContainer.innerHTML = `
         <div class="card text-center">
             <h2>${postData.title}</h2>
-            ${postData.media ? `<img src="${postData.media}" alt="Post Image" style="max-width: 200px; margin: 0 auto; display: block;">` : ''}
+            ${postData.media ? `<img src="${postData.media}" alt="Post Image" style="max-width: 500px; margin: 0 auto; display: block;">` : ''}
             <p>${postData.body}</p>
             <p>${postData.tags}</p>
         </div>`;
@@ -37,3 +36,6 @@ export async function getPost(id) {
         console.log(error)
     }
 }
+
+import { logout } from "../handlers/logout.mjs";
+logout()
