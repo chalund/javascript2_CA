@@ -1,6 +1,17 @@
 import { getPostsWithAuthor } from "../posts/get.mjs";
 import { postTemplate } from "../templates/fetchAllPost.mjs";
 
+export function createSearchResultCountElement(count) {
+    const countDiv = document.createElement("div");
+    countDiv.classList.add("card", "text-center", "mb-3");
+  
+    const countElement = document.createElement("p");
+    countElement.textContent = `Search Results: ${count}`;
+  
+    countDiv.append(countElement);
+    return countDiv;
+  }
+
 export async function search(param) {
     try {
         const posts = await getPostsWithAuthor();
@@ -30,16 +41,20 @@ searchInput.addEventListener("input", async (event) => {
 
     try {
         const result = await search(value);
-        // console.log("Search result:", result);
-        searchResult.innerHTML = '';
 
+        searchResult.innerHTML = '';
+ 
+        const searchCount = createSearchResultCountElement(result.length);
+        searchResult.append(searchCount);
+        
+        
         if (!result.length) {
-            searchResult.innerHTML = `<div class="card text-center p-3">Sorry, no record was found</div>`
+            searchResult.innerHTML = `<div class="card text-center p-3">Sorry, no record was found</div>`;
         } else {
             result.forEach((postData) => {
                 const postCard = postTemplate(postData);
-                searchResult.appendChild(postCard);
-            });
+                searchResult.append(postCard);
+            })
         }
     } catch (error) {
         console.log("Error during search:", error);
