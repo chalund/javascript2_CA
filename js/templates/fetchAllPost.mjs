@@ -38,7 +38,7 @@ followButton.textContent = "Follow";
 userDiv.append(followButton)
 
 const postCard = document.createElement("div");
-postCard.classList.add("post-card", "col-sm-8");
+postCard.classList.add("post-card", "col-sm-8", "interactive");
 
 const cardBody = document.createElement("div");
 cardBody.classList.add("card-body");

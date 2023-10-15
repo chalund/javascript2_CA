@@ -36,7 +36,27 @@ export async function fetchAndFilterPosts() {
   }
 }
 
-export function createTitleElement(title) {
+export function appendCountElement(container, count) {
+  if (count !== undefined) {
+    const countElement = createCountElement(count);
+    countElement.classList.add("text-center", "bg-primary", "text-white");
+    container.append(countElement);
+  }
+}
+
+export function createCountElement(count) {
+  const countDiv = document.createElement("div");
+  countDiv.classList.add("card", "text-center", "mb-3");
+
+  const countElement = document.createElement("p");
+  countElement.textContent = `Number of Posts: ${count}`;
+
+  countDiv.append(countElement);
+  return countDiv;
+}
+
+
+export function createTitleElement(title, count) {
   const titleDiv = document.createElement("div");
   titleDiv.classList.add("card", "text-center", "mb-3", "bg-primary", "text-white");
 
@@ -44,24 +64,28 @@ export function createTitleElement(title) {
   titleElement.textContent = title;
 
   titleDiv.append(titleElement);
+
+  appendCountElement(titleDiv, count);
+
   return titleDiv;
 }
+
 
 export function filterPopular(posts) {
   const popular = posts.filter((currentPost) => {
     const hasReactions = currentPost._count.reactions > 0;
     return hasReactions;
   });
-// console.log("Liked Posts:", popular);
+
   filterPostContainer.innerHTML = " ";
 
-  const titleDiv = createTitleElement("Popular");
+  const titleDiv = createTitleElement("Popular", popular.length);
   filterPostContainer.append(titleDiv);
- 
+
   popular.forEach((post) => {
-      const postElement = postTemplate(post);
-      filterPostContainer.append(postElement); 
-})
+    const postElement = postTemplate(post);
+    filterPostContainer.append(postElement);
+  });
 }
 
 export function filterPostsWithImages(posts) {
@@ -69,10 +93,10 @@ export function filterPostsWithImages(posts) {
     const hasImage = !!currentPost.media;
     return hasImage;
   });
-  // console.log("Posts with Images:", postsWithImages);
+// console.log("Posts with Images:", postsWithImages);
   filterPostContainer.innerHTML = " ";
 
-  const titleDiv = createTitleElement("Post with Images");
+  const titleDiv = createTitleElement("Post with Images", postsWithImages.length);
   filterPostContainer.append(titleDiv);
  
   postsWithImages.forEach((post) => {
@@ -91,7 +115,7 @@ export function filterUpdatedPosts(posts) {
 // console.log("Post with update", updatedPosts);
   filterPostContainer.innerHTML = " ";
 
-  const titleDiv = createTitleElement("Updated Posts");
+  const titleDiv = createTitleElement("Updated Posts", updatedPosts.length);
   filterPostContainer.append(titleDiv);
  
   updatedPosts.forEach((post) => {
@@ -101,8 +125,12 @@ export function filterUpdatedPosts(posts) {
 }
 
 export function showAllPosts(posts) {
-  console.log("All Posts:", posts);
+// console.log("All Posts:", posts);
   filterPostContainer.innerHTML = "";
+
+  const titleDiv = createTitleElement("All Posts", posts.length);
+  filterPostContainer.append(titleDiv);
+
   posts.forEach((post) => {
     const postElement = postTemplate(post);
     filterPostContainer.append(postElement);

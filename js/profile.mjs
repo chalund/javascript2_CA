@@ -7,7 +7,7 @@ import { renderPostTemplates } from "./templates/fetchProfilePosts.mjs";
 export async function getPostTemplate() {
     const posts = await getPostsUser()
     const container = document.querySelector("#profilePosts")
-  console.log(posts)
+  // console.log(posts)
     if (posts.length === 0) {
         const messageElement = document.createElement("h3");
         messageElement.classList.add("card", "mt-3", "text-center", "p-5")
